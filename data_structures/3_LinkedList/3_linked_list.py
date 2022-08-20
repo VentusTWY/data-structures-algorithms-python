@@ -92,10 +92,10 @@ class LinkedList:
         if self.head is None:
             return
 
-        if self.head.data==data_after:
-            self.head.next = Node(data_to_insert,self.head.next)
-            return
-            
+        # if self.head.data==data_after:
+        #     self.head.next = Node(data_to_insert,self.head.next)
+        #     return
+
         itr = self.head
         while itr:
             if itr.data == data_after: # Found data_after
@@ -109,9 +109,9 @@ class LinkedList:
         if self.head is None:
             return
              
-        if self.head.data == data:
-            self.head = self.head.next
-            return
+        # if self.head.data == data:
+        #     self.head = self.head.next
+        #     return
 
         itr = self.head
         while itr.next: 
@@ -125,30 +125,32 @@ class LinkedList:
 
 
 if __name__ == '__main__':
-    # ll = LinkedList()
-    # ll.insert_values(["banana","mango","grapes","orange"])
-    # ll.insert_at_begining('12312321312312')
-    # ll.insert_at(1,"blueberry")
-    # ll.insert_after_value('grapes',999)
-    # ll.remove_by_value("mango")
-    # ll.remove_by_value("grapes")
-    # ll.remove_by_value('12312321312312')
-    # ll.print()
-
     ll = LinkedList()
     ll.insert_values(["banana","mango","grapes","orange"])
-    ll.print()
-    ll.insert_after_value("mango","apple") # insert apple after mango
-    ll.print()
-    ll.remove_by_value("orange") # remove orange from linked list
-    ll.print()
-    ll.remove_by_value("figs")
-    ll.print()
-    ll.remove_by_value("banana")
-    ll.remove_by_value("mango")
-    ll.remove_by_value("apple")
+    ll.insert_at_begining('12312321312312')
+    ll.insert_at(1,"blueberry")
+    ll.insert_after_value('grapes',999)
     ll.remove_by_value("grapes")
+    ll.remove_by_value('12312321312312')
+    ll.insert_after_value("mango", "pineapple")
+    ll.insert_after_value("blueberry",222)
+    ll.remove_by_value("blueberry")
     ll.print()
+
+    # ll = LinkedList()
+    # ll.insert_values(["banana","mango","grapes","orange"])
+    # ll.print()
+    # ll.insert_after_value("mango","apple") # insert apple after mango
+    # ll.print()
+    # ll.remove_by_value("orange") # remove orange from linked list
+    # ll.print()
+    # ll.remove_by_value("figs")
+    # ll.print()
+    # ll.remove_by_value("banana")
+    # ll.remove_by_value("mango")
+    # ll.remove_by_value("apple")
+    # ll.remove_by_value("grapes")
+    # ll.print()
 
 
 
