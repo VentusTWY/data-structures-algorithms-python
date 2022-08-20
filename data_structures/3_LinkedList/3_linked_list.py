@@ -85,15 +85,67 @@ class LinkedList:
         for data in data_list:
             self.insert_at_end(data)
 
+    def insert_after_value(self, data_after, data_to_insert):
+    # Search for first occurance of data_after value in linked list
+    # Now insert data_to_insert after data_after node
+
+        if self.head is None:
+            return
+
+        itr = self.head
+        while itr:
+            if itr.data == data_after: # Found data_after
+                node = Node(data_to_insert, itr.next)
+                itr.next = node
+                break
+            itr = itr.next
+
+
+    def remove_by_value(self, data):
+        if self.head is None:
+            return
+             
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+
+        itr = self.head
+        while itr: 
+            if itr.next.data == data:
+                itr.next = itr.next.next
+                break
+            itr = itr.next
+
+    # Remove first node that contains data
+
+
 
 if __name__ == '__main__':
+    # ll = LinkedList()
+    # ll.insert_values(["banana","mango","grapes","orange"])
+    # ll.insert_at_begining('12312321312312')
+    # ll.insert_at(1,"blueberry")
+    # ll.insert_after_value('grapes',999)
+    # ll.remove_by_value("mango")
+    # ll.remove_by_value("grapes")
+    # ll.remove_by_value('12312321312312')
+    # ll.print()
+
     ll = LinkedList()
     ll.insert_values(["banana","mango","grapes","orange"])
-    ll.insert_at(1,"blueberry")
-    ll.remove_at(2)
+    ll.print()
+    ll.insert_after_value("mango","apple") # insert apple after mango
+    ll.print()
+    ll.remove_by_value("orange") # remove orange from linked list
+    ll.print()
+    ll.remove_by_value("figs")
+    ll.print()
+    ll.remove_by_value("banana")
+    ll.remove_by_value("mango")
+    ll.remove_by_value("apple")
+    ll.remove_by_value("grapes")
     ll.print()
 
-    ll.insert_values([45,7,12,567,99])
-    ll.insert_at_end(67)
-    ll.print()
+
+
 
