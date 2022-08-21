@@ -104,8 +104,12 @@ class DoublyLinkedList:
         itr = self.head
         while itr:
             if count == index:
+                print(itr.next,'next')
+                print(itr.prev,'prev')
                 itr.prev.next = itr.next
+                
                 if itr.next:
+                    print('havenext')
                     itr.next.prev = itr.prev
                 break
 
@@ -121,15 +125,6 @@ class DoublyLinkedList:
 if __name__ == '__main__':
     ll = DoublyLinkedList()
     ll.insert_values(["banana","mango","grapes","orange"])
+    ll.remove_at(2)
     ll.print_forward()
-    ll.print_backward()
-    ll.insert_at_end("figs")
-    ll.print_forward()
-    ll.insert_at(0,"jackfruit")
-    ll.print_forward()
-    ll.insert_at(6,"dates")
-    ll.print_forward()
-    ll.insert_at(2,"kiwi")
-    ll.print_forward()
-
 
